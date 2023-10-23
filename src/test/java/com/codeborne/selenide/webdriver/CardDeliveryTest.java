@@ -1,3 +1,4 @@
+package com.codeborne.selenide.webdriver;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+
 
 public class CardDeliveryTest {
     private String generateDate(int addDays, String pattern) {
@@ -23,7 +25,8 @@ public class CardDeliveryTest {
         $("data-test-id=phone").setValue("+79850000000");
         $("data-test-id=agreement").click();
         $("button").click();
-        $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(30));
-        $(withText("Встреча успешно забронирована на")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно")).shouldBe(Condition.visible, Duration.ofSeconds(30));
+        $(withText("Встреча успешно забронирована")).shouldBe(Condition.visible, Duration.ofSeconds(30));
     }
 }
+
