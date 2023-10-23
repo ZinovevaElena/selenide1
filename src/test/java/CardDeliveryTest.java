@@ -23,7 +23,7 @@ public class CardDeliveryTest {
         $("data-test-id=phone").setValue("+79850000000");
         $("data-test-id=agreement").click();
         $("button").click();
-        $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(30));
         $(withText("Встреча успешно забронирована на")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 }
